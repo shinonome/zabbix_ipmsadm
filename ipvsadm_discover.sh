@@ -11,7 +11,7 @@ do
 #	echo ${LINE}
 	TYPE=`echo ${LINE} | awk '{print $1}'`
 	IP_INFO=`echo ${LINE} | awk '{print $2}'`
-	if [ ${END_FLG} != 0 ] ; then
+        if [ ${END_FLG} = 1  -a ${TYPE} = "->" ] ; then
 		echo ", "
 	fi
 	if [ "${TYPE}" = "TCP" -o "${TYPE}" = "UDP" ] ; then
